@@ -164,7 +164,7 @@ namespace MAVN.Service.PartnerApi.Controllers
         {
             await _paymentManagementClient.Api.ValidatePaymentAsync(new PaymentValidationRequest
             {
-                PartnerId = request.PartnerId, PaymentRequestId = request.PaymentRequestId
+                PaymentRequestId = request.PaymentRequestId,
             });
         }
     }
