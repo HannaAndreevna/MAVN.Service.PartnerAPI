@@ -7,6 +7,10 @@ using Falcon.Common.Middleware.Authentication;
 using Lykke.Common.Log;
 using MAVN.Service.PartnerApi.Domain.Models.Payment;
 using MAVN.Service.PartnerApi.Domain.Services;
+using MAVN.Service.PartnerApi.Models.Payments;
+using MAVN.Service.PaymentManagement.Client;
+using MAVN.Service.PaymentManagement.Client.Models.Requests;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MAVN.Service.PartnerApi.Controllers
@@ -19,13 +23,15 @@ namespace MAVN.Service.PartnerApi.Controllers
         private readonly IMapper _mapper;
         private readonly ILog _log;
         private readonly IPaymentService _paymentService;
+        private readonly IPaymentManagementClient _paymentManagementClient;
         private readonly IRequestContext _requestContext;
 
-        public PaymentsController(IMapper mapper, ILogFactory logFactory, IPaymentService paymentService,
+        public PaymentsController(IMapper mapper, ILogFactory logFactory, IPaymentService paymentService, IPaymentManagementClient paymentManagementClient,
             IRequestContext requestContext)
         {
             _mapper = mapper;
             _paymentService = paymentService;
+            _paymentManagementClient = paymentManagementClient;
             _requestContext = requestContext;
             _log = logFactory.CreateLog(this);
         }
@@ -139,6 +145,23 @@ namespace MAVN.Service.PartnerApi.Controllers
             _log.Info("Execute payment request finished", sanitizedModel);
 
             return result;
+        }
+
+        /// <summary>
+        /// Validate Payment
+        /// </summary>
+        /// <param name="request"><see cref="ValidatePaymentRequest"/></param>
+        /// <returns></returns>
+        [HttpPost]
+        [AllowAnonymous]
+        [ProducesResponseType(typeof(ExecutePaymentRequestResponseModel), (int)HttpStatusCode.NoContent)]
+        [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+        public async Task ValidatePaymentAsync([FromBody] ValidatePaymentRequest request)
+        {
+            await _paymentManagementClient.Api.ValidatePaymentAsync(new PaymentValidationRequest
+            {
+                PartnerId = request.PartnerId, PaymentRequestId = request.PaymentRequestId
+            });
         }
     }
 }

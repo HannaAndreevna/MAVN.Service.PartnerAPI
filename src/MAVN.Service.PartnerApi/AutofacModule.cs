@@ -9,6 +9,7 @@ using Lykke.SettingsReader;
 using MAVN.Service.PartnerApi.Domain.Services;
 using MAVN.Service.PartnerApi.DomainServices;
 using MAVN.Service.PartnerApi.Settings;
+using MAVN.Service.PaymentManagement.Client;
 using StackExchange.Redis;
 
 namespace MAVN.Service.PartnerApi
@@ -67,6 +68,7 @@ namespace MAVN.Service.PartnerApi
             builder.RegisterPartnersIntegrationClient(_appSettings.PartnersIntegrationServiceClient, null);
             builder.RegisterPartnerManagementClient(_appSettings.PartnerManagementServiceClient, null);
             builder.RegisterMaintenanceModeClient(_appSettings.MaintenanceModeServiceClient, null);
+            builder.RegisterPaymentManagementClient(_appSettings.PaymentManagementServiceClient, null);
         }
     }
 }
