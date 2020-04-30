@@ -1,0 +1,44 @@
+PartnerApiService:
+  Db:
+    LogsConnString:
+      settings-key: PartnerApiService-LogsConnString
+      types:
+        - AzureTableStorage
+
+  CacheSettings:
+    DataCacheInstance:
+      settings-key: PartnerApiService-CacheSettings-DataCacheInstance
+    RedisConfiguration:
+      settings-key: PartnerApiService-CacheSettings-RedisConfiguration
+
+  MoneyDecimalPointStringPrecision:
+    settings-key: PartnerApiService-MoneyDecimalPointStringPrecision
+
+SessionsServiceClient:
+  ServiceUrl:
+    settings-key: PartnerSessionsServiceUrl
+
+PartnersIntegrationServiceClient:
+    ServiceUrl :
+        settings-key: PartnersIntegrationServiceUrl
+
+PartnerManagementServiceClient:
+  ServiceUrl:
+    settings-key: PartnerManagementServiceUrl
+
+MaintenanceModeServiceClient:
+  ServiceUrl:
+    settings-key: MaintenanceModeServiceUrl
+
+SlackNotifications:
+  AzureQueue:
+    ConnectionString:
+      settings-key: SlackNotificationsConnString
+      types:
+        - AzureTableStorage
+    QueueName:
+      settings-key: SlackQueueName
+
+MonitoringServiceClient:
+  MonitoringServiceUrl:
+    settings-key: MonitoringServiceUrl

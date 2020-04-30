@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <Version>1.0.0</Version>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+    <PackageReference Include="Falcon.Numerics" Version="0.1.1" />
+    <PackageReference Include="Falcon.Service.PartnerManagement.Client" Version="3.0.0" />
+    <PackageReference Include="Falcon.Service.PartnersIntegration.Client" Version="5.0.0" />
+    <PackageReference Include="Falcon.Service.Sessions.Client" Version="4.0.0" />
+    <PackageReference Include="Refit" Version="4.6.107" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MAVN.Service.PartnerApi.Domain\MAVN.Service.PartnerApi.Domain.csproj" />
+  </ItemGroup>
+</Project>
