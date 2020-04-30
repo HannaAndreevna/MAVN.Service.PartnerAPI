@@ -30,6 +30,10 @@ MaintenanceModeServiceClient:
   ServiceUrl:
     settings-key: MaintenanceModeServiceUrl
 
+PaymentManagementServiceClient:
+  ServiceUrl:
+    settings-key: PaymentManagementServiceUrl
+
 SlackNotifications:
   AzureQueue:
     ConnectionString:

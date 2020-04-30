@@ -6,6 +6,7 @@ using Lykke.Service.Sessions.Client;
 using MAVN.Service.PartnerApi.Settings.Clients;
 using MAVN.Service.PartnerApi.Settings.Service;
 using MAVN.Service.PartnerApi.Settings.Slack;
+using MAVN.Service.PaymentManagement.Client;
 
 namespace MAVN.Service.PartnerApi.Settings
 {
@@ -25,5 +26,7 @@ namespace MAVN.Service.PartnerApi.Settings
         public PartnerManagementServiceClientSettings PartnerManagementServiceClient { get; set; }
 
         public MaintenanceModeServiceClientSettings MaintenanceModeServiceClient { get; set; }
+
+        public PaymentManagementServiceClientSettings PaymentManagementServiceClient { get; set; }
     }
 }
