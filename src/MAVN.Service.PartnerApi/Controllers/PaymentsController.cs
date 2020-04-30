@@ -158,7 +158,7 @@ namespace MAVN.Service.PartnerApi.Controllers
         /// <returns></returns>
         [HttpPost]
         [AllowAnonymous]
-        [ProducesResponseType(typeof(ExecutePaymentRequestResponseModel), (int)HttpStatusCode.NoContent)]
+        [ProducesResponseType((int)HttpStatusCode.NoContent)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
         public async Task ValidatePaymentAsync([FromBody] ValidatePaymentRequest request)
         {
