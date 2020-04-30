@@ -26,7 +26,11 @@ namespace MAVN.Service.PartnerApi.Controllers
         private readonly IPaymentManagementClient _paymentManagementClient;
         private readonly IRequestContext _requestContext;
 
-        public PaymentsController(IMapper mapper, ILogFactory logFactory, IPaymentService paymentService, IPaymentManagementClient paymentManagementClient,
+        public PaymentsController(
+            IMapper mapper,
+            ILogFactory logFactory,
+            IPaymentService paymentService,
+            IPaymentManagementClient paymentManagementClient,
             IRequestContext requestContext)
         {
             _mapper = mapper;
