@@ -155,8 +155,7 @@ namespace MAVN.Service.PartnerApi.Controllers
         /// Validate Payment
         /// </summary>
         /// <param name="request"><see cref="ValidatePaymentRequest"/></param>
-        /// <returns></returns>
-        [HttpPost]
+        [HttpPost("paymentchecks")]
         [AllowAnonymous]
         [ProducesResponseType((int)HttpStatusCode.NoContent)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
