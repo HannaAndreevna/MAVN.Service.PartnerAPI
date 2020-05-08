@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Common;
 using Common.Log;
-using Falcon.Common.Middleware.Authentication;
+using MAVN.Common.Middleware.Authentication;
 using Lykke.Common.Log;
 using MAVN.Service.PartnerApi.Domain.Models.Bonus;
 using MAVN.Service.PartnerApi.Domain.Services;

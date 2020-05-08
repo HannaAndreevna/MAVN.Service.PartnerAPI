@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using AutoMapper;
 using Lykke.Logs;
-using Lykke.Service.PartnersIntegration.Client;
+using MAVN.Service.PartnersIntegration.Client;
 using MAVN.Service.PartnerApi.Domain.Services;
 using MAVN.Service.PartnerApi.DomainServices;
 using Moq;
@@ -34,14 +34,14 @@ namespace MAVN.Service.PartnerApi.Tests.DomainServices
         {
             _partnersIntegrationClientMock.Setup(x =>
                 x.ReferralsApi.ReferralInformation(It
-                    .IsAny<Lykke.Service.PartnersIntegration.Client.Models.ReferralInformationRequestModel>()));
+                    .IsAny<MAVN.Service.PartnersIntegration.Client.Models.ReferralInformationRequestModel>()));
 
             await _referralService.GetReferralInformationAsync(
                 It.IsAny<Domain.Models.Referral.ReferralInformationRequestModel>());
 
             _partnersIntegrationClientMock.Verify(
                 x => x.ReferralsApi.ReferralInformation(
-                    It.IsAny<Lykke.Service.PartnersIntegration.Client.Models.ReferralInformationRequestModel>()), Times.Once);
+                    It.IsAny<MAVN.Service.PartnersIntegration.Client.Models.ReferralInformationRequestModel>()), Times.Once);
         }
     }
 }

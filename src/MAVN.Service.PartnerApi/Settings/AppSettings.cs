@@ -1,8 +1,8 @@
 ﻿using JetBrains.Annotations;
-using Lykke.Service.MaintenanceMode.Client;
-using Lykke.Service.PartnerManagement.Client;
-using Lykke.Service.PartnersIntegration.Client;
-using Lykke.Service.Sessions.Client;
+using MAVN.Service.MaintenanceMode.Client;
+using MAVN.Service.PartnerManagement.Client;
+using MAVN.Service.PartnersIntegration.Client;
+using MAVN.Service.Sessions.Client;
 using MAVN.Service.PartnerApi.Settings.Clients;
 using MAVN.Service.PartnerApi.Settings.Service;
 using MAVN.Service.PartnerApi.Settings.Slack;

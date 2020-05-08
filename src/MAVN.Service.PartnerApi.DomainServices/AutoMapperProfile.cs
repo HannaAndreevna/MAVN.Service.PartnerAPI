@@ -1,8 +1,8 @@
 ﻿using System.Globalization;
 using AutoMapper;
 using JetBrains.Annotations;
-using Lykke.Service.PartnerManagement.Client.Models.Authentication;
-using Lykke.Service.PartnersIntegration.Client.Models;
+using MAVN.Service.PartnerManagement.Client.Models.Authentication;
+using MAVN.Service.PartnersIntegration.Client.Models;
 using MAVN.Service.PartnerApi.Domain;
 using MAVN.Service.PartnerApi.Domain.Models.Customers;
 using MAVN.Service.PartnerApi.Domain.Models.Message;
@@ -30,16 +30,16 @@ namespace MAVN.Service.PartnerApi.DomainServices
         {
             _moneyDecimalPointStringPrecision = moneyDecimalPointStringPrecision;
 
-            CreateMap<Lykke.Service.PartnersIntegration.Client.Models.CustomerInformationResponseModel,
+            CreateMap<MAVN.Service.PartnersIntegration.Client.Models.CustomerInformationResponseModel,
                     CustomerInformationResponseModel>(MemberList.Destination)
                 .ForMember(dest => dest.CustomerId, opt => opt.MapFrom(src => src.Id));
 
-            CreateMap<CustomerBalanceRequestModel, Lykke.Service.PartnersIntegration.Client.Models.CustomerBalanceRequestModel>(
+            CreateMap<CustomerBalanceRequestModel, MAVN.Service.PartnersIntegration.Client.Models.CustomerBalanceRequestModel>(
                     MemberList.Destination)
                 .ForMember(dest => dest.PartnerId, opt => opt.MapFrom(src => src.GetPartnerId()))
                 .ForMember(dest => dest.ExternalLocationId, opt => opt.MapFrom(src => src.LocationId));
 
-            CreateMap<Lykke.Service.PartnersIntegration.Client.Models.CustomerBalanceResponseModel, CustomerBalanceResponseModel>(
+            CreateMap<MAVN.Service.PartnersIntegration.Client.Models.CustomerBalanceResponseModel, CustomerBalanceResponseModel>(
                     MemberList.Destination)
                 .ForMember(dest => dest.Tokens,
                     opt => opt.MapFrom(src =>
@@ -47,26 +47,26 @@ namespace MAVN.Service.PartnerApi.DomainServices
                 .ForMember(dest => dest.FiatBalance,
                     opt => opt.MapFrom(src => src.FiatBalance.ToString(_decimalFormat, CultureInfo.InvariantCulture)));
 
-            CreateMap<BonusCustomerModel, Lykke.Service.PartnersIntegration.Client.Models.BonusCustomerModel>(MemberList.Destination)
+            CreateMap<BonusCustomerModel, MAVN.Service.PartnersIntegration.Client.Models.BonusCustomerModel>(MemberList.Destination)
                 .ForMember(dest => dest.PartnerId, opt => opt.MapFrom(src => src.GetPartnerId()))
                 .ForMember(dest => dest.ExternalLocationId, opt => opt.MapFrom(src => src.LocationId))
                 .ForMember(dest => dest.FiatAmount,
                     opt => opt.MapFrom(src =>
                         !string.IsNullOrEmpty(src.FiatAmount) ? decimal.Parse(src.FiatAmount) : (decimal?) null));
 
-            CreateMap<BonusCustomersRequestModel, Lykke.Service.PartnersIntegration.Client.Models.BonusCustomersRequestModel>(
+            CreateMap<BonusCustomersRequestModel, MAVN.Service.PartnersIntegration.Client.Models.BonusCustomersRequestModel>(
                 MemberList.Destination);
 
-            CreateMap<Lykke.Service.PartnersIntegration.Client.Models.BonusCustomerResponseModel, BonusCustomerResponseModel>(
+            CreateMap<MAVN.Service.PartnersIntegration.Client.Models.BonusCustomerResponseModel, BonusCustomerResponseModel>(
                     MemberList.Destination)
                 .ForMember(dest => dest.CustomerStatus, opt => opt.MapFrom(src => src.Status));
 
-            CreateMap<ReferralInformationRequestModel, Lykke.Service.PartnersIntegration.Client.Models.ReferralInformationRequestModel>(
+            CreateMap<ReferralInformationRequestModel, MAVN.Service.PartnersIntegration.Client.Models.ReferralInformationRequestModel>(
                     MemberList.Destination)
                 .ForMember(dest => dest.PartnerId, opt => opt.MapFrom(src => src.GetPartnerId()))
                 .ForMember(dest => dest.ExternalLocationId, opt => opt.MapFrom(src => src.LocationId));
 
-            CreateMap<Lykke.Service.PartnersIntegration.Client.Models.ReferralInformationResponseModel,
+            CreateMap<MAVN.Service.PartnersIntegration.Client.Models.ReferralInformationResponseModel,
                 ReferralInformationResponseModel>(MemberList.Destination);
 
             CreateMap<ReferralModel, ReferralInfo>(MemberList.Destination)

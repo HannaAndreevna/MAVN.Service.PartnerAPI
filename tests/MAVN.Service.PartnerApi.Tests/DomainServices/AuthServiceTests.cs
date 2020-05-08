@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
 using AutoMapper;
 using Lykke.Logs;
-using Lykke.Service.PartnerManagement.Client;
-using Lykke.Service.PartnerManagement.Client.Models.Authentication;
+using MAVN.Service.PartnerManagement.Client;
+using MAVN.Service.PartnerManagement.Client.Models.Authentication;
 using MAVN.Service.PartnerApi.Domain.Services;
 using MAVN.Service.PartnerApi.DomainServices;
 using Moq;
