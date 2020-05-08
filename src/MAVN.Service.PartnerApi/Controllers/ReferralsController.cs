@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using AutoMapper;
 using Common.Log;
-using Falcon.Common.Middleware.Authentication;
+using MAVN.Common.Middleware.Authentication;
 using Lykke.Common.Log;
 using MAVN.Service.PartnerApi.Domain.Services;
 using Microsoft.AspNetCore.Mvc;

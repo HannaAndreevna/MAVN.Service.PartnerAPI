@@ -3,7 +3,7 @@ using System.Net;
 using System.Threading.Tasks;
 using Common;
 using Common.Log;
-using Falcon.Common.Middleware.Authentication;
+using MAVN.Common.Middleware.Authentication;
 using Lykke.Common.ApiLibrary.Exceptions;
 using Lykke.Common.Log;
 using MAVN.Service.PartnerApi.Domain.Models.Customers;

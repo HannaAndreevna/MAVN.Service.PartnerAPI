@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using AutoMapper;
 using Lykke.Logs;
-using Lykke.Service.PartnersIntegration.Client;
+using MAVN.Service.PartnersIntegration.Client;
 using MAVN.Service.PartnerApi.Domain.Services;
 using MAVN.Service.PartnerApi.DomainServices;
 using Moq;
@@ -33,14 +33,14 @@ namespace MAVN.Service.PartnerApi.Tests.DomainServices
         {
             _partnersIntegrationClientMock.Setup(x =>
                 x.BonusApi.TriggerBonusToCustomers(It
-                    .IsAny<Lykke.Service.PartnersIntegration.Client.Models.BonusCustomersRequestModel>()));
+                    .IsAny<MAVN.Service.PartnersIntegration.Client.Models.BonusCustomersRequestModel>()));
 
             await _bonusService.TriggerBonusToCustomersAsync(
                 It.IsAny<Domain.Models.Bonus.BonusCustomersRequestModel>());
 
             _partnersIntegrationClientMock.Verify(
                 x => x.BonusApi.TriggerBonusToCustomers(
-                    It.IsAny<Lykke.Service.PartnersIntegration.Client.Models.BonusCustomersRequestModel>()), Times.Once);
+                    It.IsAny<MAVN.Service.PartnersIntegration.Client.Models.BonusCustomersRequestModel>()), Times.Once);
         }
     }
 }

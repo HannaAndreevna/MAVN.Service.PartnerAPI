@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 using AutoMapper;
-using Lykke.Service.PartnersIntegration.Client;
+using MAVN.Service.PartnersIntegration.Client;
 using MAVN.Service.PartnerApi.Domain.Models.Customers;
 using MAVN.Service.PartnerApi.Domain.Services;
 
@@ -21,7 +21,7 @@ namespace MAVN.Service.PartnerApi.DomainServices
 
         public async Task<CustomerBalanceResponseModel> GetCustomerBalanceAsync(string customerId, CustomerBalanceRequestModel model)
         {
-            var request = _mapper.Map<Lykke.Service.PartnersIntegration.Client.Models.CustomerBalanceRequestModel>(model);
+            var request = _mapper.Map<MAVN.Service.PartnersIntegration.Client.Models.CustomerBalanceRequestModel>(model);
 
             var result = await _partnersIntegrationClient.CustomersApi.GetCustomerBalance(customerId, request);
 
@@ -30,7 +30,7 @@ namespace MAVN.Service.PartnerApi.DomainServices
 
         public async Task<CustomerInformationResponseModel> QueryCustomerInformationAsync(QueryCustomerInformationRequestModel model)
         {
-            var request = _mapper.Map<Lykke.Service.PartnersIntegration.Client.Models.CustomerInformationRequestModel>(model);
+            var request = _mapper.Map<MAVN.Service.PartnersIntegration.Client.Models.CustomerInformationRequestModel>(model);
 
             var result = await _partnersIntegrationClient.CustomersApi.CustomerInformation(request);
 
