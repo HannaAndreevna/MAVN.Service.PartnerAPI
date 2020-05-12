@@ -17,7 +17,6 @@ namespace MAVN.Service.PartnerApi.Controllers
 {
     [Route("api/payments")]
     [ApiController]
-    [LykkeAuthorize]
     public class PaymentsController : Controller
     {
         private readonly IMapper _mapper;
@@ -46,6 +45,7 @@ namespace MAVN.Service.PartnerApi.Controllers
         /// <param name="model"><see cref="CreatePaymentRequestRequestModel"/></param>
         /// <returns><see cref="CreatePaymentRequestResponseModel"/></returns>
         [HttpPost("requests")]
+        [LykkeAuthorize]
         [ProducesResponseType(typeof(CreatePaymentRequestResponseModel), (int) HttpStatusCode.OK)]
         [ProducesResponseType((int) HttpStatusCode.Unauthorized)]
         [ProducesResponseType((int) HttpStatusCode.BadRequest)]
@@ -83,6 +83,7 @@ namespace MAVN.Service.PartnerApi.Controllers
         /// <param name="paymentRequestId">Payment request id</param>
         /// <returns><see cref="GetPaymentRequestStatusResponseModel"/></returns>
         [HttpGet("requests")]
+        [LykkeAuthorize]
         [ProducesResponseType(typeof(GetPaymentRequestStatusResponseModel), (int) HttpStatusCode.OK)]
         [ProducesResponseType((int) HttpStatusCode.Unauthorized)]
         [ProducesResponseType((int) HttpStatusCode.BadRequest)]
@@ -106,6 +107,7 @@ namespace MAVN.Service.PartnerApi.Controllers
         /// <param name="paymentRequestId">Payment request id</param>
         /// <returns></returns>
         [HttpDelete("requests")]
+        [LykkeAuthorize]
         [ProducesResponseType((int) HttpStatusCode.NoContent)]
         [ProducesResponseType((int) HttpStatusCode.Unauthorized)]
         [ProducesResponseType((int) HttpStatusCode.BadRequest)]
@@ -128,6 +130,7 @@ namespace MAVN.Service.PartnerApi.Controllers
         /// <param name="model"><see cref="ExecutePaymentRequestRequestModel"/></param>
         /// <returns><see cref="ExecutePaymentRequestResponseModel"/></returns>
         [HttpPost]
+        [LykkeAuthorize]
         [ProducesResponseType(typeof(ExecutePaymentRequestResponseModel), (int) HttpStatusCode.OK)]
         [ProducesResponseType((int) HttpStatusCode.Unauthorized)]
         [ProducesResponseType((int) HttpStatusCode.BadRequest)]
@@ -155,8 +158,7 @@ namespace MAVN.Service.PartnerApi.Controllers
         /// Validate Payment
         /// </summary>
         /// <param name="request"><see cref="ValidatePaymentRequest"/></param>
-        /// <returns></returns>
-        [HttpPost]
+        [HttpPost("paymentchecks")]
         [AllowAnonymous]
         [ProducesResponseType((int)HttpStatusCode.NoContent)]
         [ProducesResponseType((int)HttpStatusCode.BadRequest)]
