@@ -49,7 +49,7 @@ namespace MAVN.Service.PartnerApi.Tests
 
                     foreach (var methodParam in methodParams)
                     {
-                        if (!methodParam.ParameterType.Assembly.FullName.StartsWith("Lykke.Service.PartnerApi")
+                        if (!methodParam.ParameterType.Assembly.FullName.StartsWith("MAVN.Service.PartnerApi")
                             || !methodParam.ParameterType.IsClass)
                             continue;
 

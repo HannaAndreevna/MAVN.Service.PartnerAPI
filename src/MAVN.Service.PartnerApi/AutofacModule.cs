@@ -1,10 +1,10 @@
-﻿using Autofac;
-using Falcon.Common.Middleware.Authentication;
+using Autofac;
+using MAVN.Common.Middleware.Authentication;
 using JetBrains.Annotations;
-using Lykke.Service.MaintenanceMode.Client;
-using Lykke.Service.PartnerManagement.Client;
-using Lykke.Service.PartnersIntegration.Client;
-using Lykke.Service.Sessions.Client;
+using MAVN.Service.MaintenanceMode.Client;
+using MAVN.Service.PartnerManagement.Client;
+using MAVN.Service.PartnersIntegration.Client;
+using MAVN.Service.Sessions.Client;
 using Lykke.SettingsReader;
 using MAVN.Service.PartnerApi.Domain.Services;
 using MAVN.Service.PartnerApi.DomainServices;

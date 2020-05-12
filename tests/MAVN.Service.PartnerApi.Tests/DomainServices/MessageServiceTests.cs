@@ -1,7 +1,7 @@
-﻿using System.Threading.Tasks;
+using System.Threading.Tasks;
 using AutoMapper;
-using Lykke.Service.PartnersIntegration.Client;
-using Lykke.Service.PartnersIntegration.Client.Models;
+using MAVN.Service.PartnersIntegration.Client;
+using MAVN.Service.PartnersIntegration.Client.Models;
 using MAVN.Service.PartnerApi.Domain.Services;
 using MAVN.Service.PartnerApi.DomainServices;
 using Moq;

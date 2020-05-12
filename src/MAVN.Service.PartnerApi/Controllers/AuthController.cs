@@ -1,11 +1,11 @@
-﻿using System;
+using System;
 using System.Net;
 using System.Threading.Tasks;
 using Common.Log;
-using Falcon.Common.Middleware.Authentication;
+using MAVN.Common.Middleware.Authentication;
 using Lykke.Common.ApiLibrary.Exceptions;
 using Lykke.Common.Log;
-using Lykke.Service.Sessions.Client;
+using MAVN.Service.Sessions.Client;
 using MAVN.Service.PartnerApi.Domain.Services;
 using MAVN.Service.PartnerApi.Infrastructure.Constants;
 using MAVN.Service.PartnerApi.Models.Auth;

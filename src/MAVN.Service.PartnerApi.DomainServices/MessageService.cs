@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 using AutoMapper;
-using Lykke.Service.PartnersIntegration.Client;
+using MAVN.Service.PartnersIntegration.Client;
 using MAVN.Service.PartnerApi.Domain.Models.Message;
 using MAVN.Service.PartnerApi.Domain.Services;
 
@@ -19,7 +19,7 @@ namespace MAVN.Service.PartnerApi.DomainServices
 
         public async Task<SendMessageResponseModel> SendMessageAsync(SendMessageRequestModel model)
         {
-            var request = _mapper.Map<Lykke.Service.PartnersIntegration.Client.Models.MessagesPostRequestModel>(model);
+            var request = _mapper.Map<PartnersIntegration.Client.Models.MessagesPostRequestModel>(model);
 
             var result = await _partnersIntegrationClient.MessagesApi.SendMessageAsync(request);
 

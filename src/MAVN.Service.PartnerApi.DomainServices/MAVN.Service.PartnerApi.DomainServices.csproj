@@ -5,10 +5,10 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="9.0.0" />
-    <PackageReference Include="Falcon.Numerics" Version="0.1.1" />
-    <PackageReference Include="Falcon.Service.PartnerManagement.Client" Version="3.0.0" />
-    <PackageReference Include="Falcon.Service.PartnersIntegration.Client" Version="5.0.0" />
-    <PackageReference Include="Falcon.Service.Sessions.Client" Version="4.0.0" />
+    <PackageReference Include="MAVN.Numerics" Version="1.0.0" />
+    <PackageReference Include="MAVN.Service.PartnerManagement.Client" Version="1.1.0" />
+    <PackageReference Include="MAVN.Service.PartnersIntegration.Client" Version="1.1.0" />
+    <PackageReference Include="MAVN.Service.Sessions.Client" Version="1.0.1" />
     <PackageReference Include="Refit" Version="4.6.107" />
   </ItemGroup>
   <ItemGroup>

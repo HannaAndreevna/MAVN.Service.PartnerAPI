@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Common.Log;
 using Lykke.Common.Log;
-using Lykke.Service.PartnersIntegration.Client;
+using MAVN.Service.PartnersIntegration.Client;
 using MAVN.Service.PartnerApi.Domain.Models.Bonus;
 using MAVN.Service.PartnerApi.Domain.Services;
 
@@ -25,7 +25,7 @@ namespace MAVN.Service.PartnerApi.DomainServices
 
         public async Task<List<BonusCustomerResponseModel>> TriggerBonusToCustomersAsync(BonusCustomersRequestModel model)
         {
-            var request = _mapper.Map<Lykke.Service.PartnersIntegration.Client.Models.BonusCustomersRequestModel>(model);
+            var request = _mapper.Map<PartnersIntegration.Client.Models.BonusCustomersRequestModel>(model);
 
             var result = await _partnersIntegrationClient.BonusApi.TriggerBonusToCustomers(request);
 
