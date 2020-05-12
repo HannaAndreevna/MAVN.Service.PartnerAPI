@@ -1,4 +1,4 @@
-﻿using System.Threading.Tasks;
+using System.Threading.Tasks;
 using AutoMapper;
 using MAVN.Service.PartnersIntegration.Client;
 using MAVN.Service.PartnersIntegration.Client.Models;

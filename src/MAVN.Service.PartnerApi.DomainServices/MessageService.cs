@@ -19,7 +19,7 @@ namespace MAVN.Service.PartnerApi.DomainServices
 
         public async Task<SendMessageResponseModel> SendMessageAsync(SendMessageRequestModel model)
         {
-            var request = _mapper.Map<MAVN.Service.PartnersIntegration.Client.Models.MessagesPostRequestModel>(model);
+            var request = _mapper.Map<PartnersIntegration.Client.Models.MessagesPostRequestModel>(model);
 
             var result = await _partnersIntegrationClient.MessagesApi.SendMessageAsync(request);
 

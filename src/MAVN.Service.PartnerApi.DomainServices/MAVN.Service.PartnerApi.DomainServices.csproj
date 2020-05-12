@@ -6,7 +6,6 @@
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="9.0.0" />
     <PackageReference Include="MAVN.Numerics" Version="1.0.0" />
-    <PackageReference Include="MAVN.Service.MaintenanceMode.Client" Version="1.0.1" />
     <PackageReference Include="MAVN.Service.PartnerManagement.Client" Version="1.4.0" />
     <PackageReference Include="MAVN.Service.PartnersIntegration.Client" Version="1.1.0" />
     <PackageReference Include="MAVN.Service.Sessions.Client" Version="1.0.1" />

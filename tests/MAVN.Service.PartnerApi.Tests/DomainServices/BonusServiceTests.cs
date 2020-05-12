@@ -33,14 +33,14 @@ namespace MAVN.Service.PartnerApi.Tests.DomainServices
         {
             _partnersIntegrationClientMock.Setup(x =>
                 x.BonusApi.TriggerBonusToCustomers(It
-                    .IsAny<MAVN.Service.PartnersIntegration.Client.Models.BonusCustomersRequestModel>()));
+                    .IsAny<PartnersIntegration.Client.Models.BonusCustomersRequestModel>()));
 
             await _bonusService.TriggerBonusToCustomersAsync(
                 It.IsAny<Domain.Models.Bonus.BonusCustomersRequestModel>());
 
             _partnersIntegrationClientMock.Verify(
                 x => x.BonusApi.TriggerBonusToCustomers(
-                    It.IsAny<MAVN.Service.PartnersIntegration.Client.Models.BonusCustomersRequestModel>()), Times.Once);
+                    It.IsAny<PartnersIntegration.Client.Models.BonusCustomersRequestModel>()), Times.Once);
         }
     }
 }

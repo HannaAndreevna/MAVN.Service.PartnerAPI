@@ -32,14 +32,14 @@ namespace MAVN.Service.PartnerApi.Tests.DomainServices
         {
             _partnersIntegrationClientMock.Setup(x =>
                 x.CustomersApi.GetCustomerBalance(It.IsAny<string>(),
-                    It.IsAny<MAVN.Service.PartnersIntegration.Client.Models.CustomerBalanceRequestModel>()));
+                    It.IsAny<PartnersIntegration.Client.Models.CustomerBalanceRequestModel>()));
 
             await _customerService.GetCustomerBalanceAsync(It.IsAny<string>(),
                 It.IsAny<Domain.Models.Customers.CustomerBalanceRequestModel>());
 
             _partnersIntegrationClientMock.Verify(
                 x => x.CustomersApi.GetCustomerBalance(It.IsAny<string>(),
-                    It.IsAny<MAVN.Service.PartnersIntegration.Client.Models.CustomerBalanceRequestModel>()), Times.Once);
+                    It.IsAny<PartnersIntegration.Client.Models.CustomerBalanceRequestModel>()), Times.Once);
         }
     }
 }

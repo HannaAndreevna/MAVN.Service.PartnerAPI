@@ -1,4 +1,4 @@
-﻿using JetBrains.Annotations;
+using JetBrains.Annotations;
 using MAVN.Service.MaintenanceMode.Client;
 using MAVN.Service.PartnerManagement.Client;
 using MAVN.Service.PartnersIntegration.Client;

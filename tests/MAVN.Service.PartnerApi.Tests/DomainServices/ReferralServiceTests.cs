@@ -34,14 +34,14 @@ namespace MAVN.Service.PartnerApi.Tests.DomainServices
         {
             _partnersIntegrationClientMock.Setup(x =>
                 x.ReferralsApi.ReferralInformation(It
-                    .IsAny<MAVN.Service.PartnersIntegration.Client.Models.ReferralInformationRequestModel>()));
+                    .IsAny<PartnersIntegration.Client.Models.ReferralInformationRequestModel>()));
 
             await _referralService.GetReferralInformationAsync(
                 It.IsAny<Domain.Models.Referral.ReferralInformationRequestModel>());
 
             _partnersIntegrationClientMock.Verify(
                 x => x.ReferralsApi.ReferralInformation(
-                    It.IsAny<MAVN.Service.PartnersIntegration.Client.Models.ReferralInformationRequestModel>()), Times.Once);
+                    It.IsAny<PartnersIntegration.Client.Models.ReferralInformationRequestModel>()), Times.Once);
         }
     }
 }

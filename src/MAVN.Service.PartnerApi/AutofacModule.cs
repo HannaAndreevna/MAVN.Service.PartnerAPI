@@ -1,4 +1,4 @@
-﻿using Autofac;
+using Autofac;
 using MAVN.Common.Middleware.Authentication;
 using JetBrains.Annotations;
 using MAVN.Service.MaintenanceMode.Client;

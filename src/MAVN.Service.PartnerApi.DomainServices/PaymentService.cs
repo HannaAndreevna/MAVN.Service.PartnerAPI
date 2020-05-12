@@ -25,7 +25,7 @@ namespace MAVN.Service.PartnerApi.DomainServices
         public async Task<CreatePaymentRequestResponseModel> CreatePaymentRequestAsync(
             CreatePaymentRequestRequestModel model)
         {
-            var request = _mapper.Map<MAVN.Service.PartnersIntegration.Client.Models.PaymentsCreateRequestModel>(model);
+            var request = _mapper.Map<PartnersIntegration.Client.Models.PaymentsCreateRequestModel>(model);
 
             var result = await _partnersIntegrationClient.PaymentsApi.CreatePaymentRequestAsync(request);
 
@@ -49,7 +49,7 @@ namespace MAVN.Service.PartnerApi.DomainServices
         public async Task<ExecutePaymentRequestResponseModel> ExecutePaymentRequestAsync(
             ExecutePaymentRequestRequestModel model)
         {
-            var request = _mapper.Map<MAVN.Service.PartnersIntegration.Client.Models.PaymentsExecuteRequestModel>(model);
+            var request = _mapper.Map<PartnersIntegration.Client.Models.PaymentsExecuteRequestModel>(model);
 
             var result = await _partnersIntegrationClient.PaymentsApi.ExecutePaymentRequestAsync(request);
 

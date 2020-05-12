@@ -1,4 +1,4 @@
-﻿using System.Threading.Tasks;
+using System.Threading.Tasks;
 using AutoMapper;
 using Common.Log;
 using Lykke.Common.Log;

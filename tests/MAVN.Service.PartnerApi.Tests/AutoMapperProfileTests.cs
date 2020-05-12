@@ -35,7 +35,7 @@ namespace MAVN.Service.PartnerApi.Tests
         public void
             When_Customer_Information_Response_Model_Is_Mapped_To_Customer_Response_Model_Then_Properties_Are_Mapped_Properly()
         {
-            var src = _fixture.Create<MAVN.Service.PartnersIntegration.Client.Models.CustomerInformationResponseModel>();
+            var src = _fixture.Create<PartnersIntegration.Client.Models.CustomerInformationResponseModel>();
             var dest = _mapper.Map<CustomerInformationResponseModel>(src);
 
             Assert.Equal(src.Id, dest.CustomerId);
@@ -48,7 +48,7 @@ namespace MAVN.Service.PartnerApi.Tests
         public void
             When_Partners_Integration_Client_Models_Customer_Balance_Response_Model_Is_Mapped_To_Customer_Balance_Response_Model_Then_Properties_Are_Mapped_Properly()
         {
-            var src = _fixture.Create<MAVN.Service.PartnersIntegration.Client.Models.CustomerBalanceResponseModel>();
+            var src = _fixture.Create<PartnersIntegration.Client.Models.CustomerBalanceResponseModel>();
             var dest = _mapper.Map<CustomerBalanceResponseModel>(src);
 
             Assert.Equal(src.Tokens.ToString("R", 3), dest.Tokens);
@@ -60,7 +60,7 @@ namespace MAVN.Service.PartnerApi.Tests
         public void
             When_Bonus_Customer_Trigger_Response_Model_Is_Mapped_To_Trigger_Bonus_To_Customer_Response_Model_Then_Properties_Are_Mapped_Properly()
         {
-            var src = _fixture.Create<MAVN.Service.PartnersIntegration.Client.Models.BonusCustomerResponseModel>();
+            var src = _fixture.Create<PartnersIntegration.Client.Models.BonusCustomerResponseModel>();
             var dest = _mapper.Map<BonusCustomerResponseModel>(src);
 
             Assert.Equal(src.Status.ToString(), dest.CustomerStatus.ToString());
@@ -71,7 +71,7 @@ namespace MAVN.Service.PartnerApi.Tests
         public void
             When_Referral_Information_Response_Model_Is_Mapped_To_Trigger_Bonus_To_Referral_Response_Model_Then_Properties_Are_Mapped_Properly()
         {
-            var src = _fixture.Create<MAVN.Service.PartnersIntegration.Client.Models.ReferralInformationResponseModel>();
+            var src = _fixture.Create<PartnersIntegration.Client.Models.ReferralInformationResponseModel>();
             var dest = _mapper.Map<ReferralInformationResponseModel>(src);
 
             Assert.Equal(src.Status.ToString().ToLower(), dest.Status.ToString().ToLower());

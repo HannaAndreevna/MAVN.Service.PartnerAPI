@@ -24,7 +24,7 @@ namespace MAVN.Service.PartnerApi.DomainServices
 
         public async Task<ReferralInformationResponseModel> GetReferralInformationAsync(ReferralInformationRequestModel model)
         {
-            var request = _mapper.Map<MAVN.Service.PartnersIntegration.Client.Models.ReferralInformationRequestModel>(model);
+            var request = _mapper.Map<PartnersIntegration.Client.Models.ReferralInformationRequestModel>(model);
 
             var result = await _partnersIntegrationClient.ReferralsApi.ReferralInformation(request);
 

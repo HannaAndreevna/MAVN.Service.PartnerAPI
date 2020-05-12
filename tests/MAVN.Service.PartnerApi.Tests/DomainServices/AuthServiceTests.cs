@@ -1,4 +1,4 @@
-﻿using System.Threading.Tasks;
+using System.Threading.Tasks;
 using AutoMapper;
 using Lykke.Logs;
 using MAVN.Service.PartnerManagement.Client;

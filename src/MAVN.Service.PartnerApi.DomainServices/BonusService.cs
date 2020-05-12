@@ -25,7 +25,7 @@ namespace MAVN.Service.PartnerApi.DomainServices
 
         public async Task<List<BonusCustomerResponseModel>> TriggerBonusToCustomersAsync(BonusCustomersRequestModel model)
         {
-            var request = _mapper.Map<MAVN.Service.PartnersIntegration.Client.Models.BonusCustomersRequestModel>(model);
+            var request = _mapper.Map<PartnersIntegration.Client.Models.BonusCustomersRequestModel>(model);
 
             var result = await _partnersIntegrationClient.BonusApi.TriggerBonusToCustomers(request);
 
